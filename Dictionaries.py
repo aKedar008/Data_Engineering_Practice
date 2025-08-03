@@ -86,3 +86,131 @@ for key, value in user_0.items():
 for name, language in favorite_language.items():
     print(f"{name.title()}'s favurite language is {language.title()}.")
 
+# just looping through the key's
+
+for name in favorite_language.keys():
+    print(name.title())
+
+friends = ['Phil','Sarah']
+for name in favorite_language.keys():
+    print(name.title())
+
+    if name in friends:
+        language = favorite_language[name].title()
+        print(f"\t{name.title()},I see you love {language}!")
+
+# Using sorted function with dictionary
+
+for name in sorted(favorite_language.keys()):
+    print(f"{name.title()}, thank you for taking the poll.")
+
+# Now Looping through all the values
+
+print("The following languages have been mentioned:")
+# for language in favorite_language.values():
+#     print(language.title())
+
+# A set is a collection in which each item must be unique:
+
+for language in set(favorite_language.values()):
+    print(language.title())
+
+# 6-5. Rivers: Make a dictionary containing three major rivers and the country
+# each river runs through. One key-value pair might be 'nile': 'egypt'.
+# •	 Use a loop to print a sentence about each river, such as The Nile runs
+# through Egypt.
+# •	 Use a loop to print the name of each river included in the dictionary.
+# •	 Use a loop to print the name of each country included in the dictionary.
+
+rivers = {'nile':'egypt','ganga':'india','amazon':'brazil'}
+
+for key,value in rivers.items():
+    print(f"The {key.title()} runs through {value.title()}")
+
+for key in rivers.keys():
+    print(key.title())
+
+for value in rivers.values():
+    print(value.title())
+
+# Sometimes you’ll want to store multiple dictionaries in a list, or a list of
+# items as a value in a dictionary. This is called nesting. You can nest dictionaries inside a list, a list of items inside a dictionary, or even a dictionary inside
+# another dictionary.
+
+# In the following example we
+# use range() to create a fleet of 30 aliens:
+#make empty list for storing aliens
+aliens =  []
+#creating 30 aliens
+for alien_number in range (30):
+    new_alien = {'color':'green','points':5,'speed':'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+print(f"Total number of aliens : {len(aliens)}")
+
+# # , to change the
+# first three aliens to yellow, mediumspeed aliens worth 10 points each, we
+# could do this:
+
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['speed'] = 'medium'
+        alien['points'] = 10
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+# Store information about a pizza being ordered.
+pizza = {
+   'crust': 'thick',
+    'toppings': ['mushrooms', 'extra cheese'],
+ }
+# Summarize the order.
+print(f"You ordered a {pizza['crust']}-crust pizza "
+    "with the following toppings:")
+for topping in pizza['toppings']:
+    print("\t" + topping)
+
+favorite_languages = {
+    'jen':['python','ruby'],
+    'sarah':['c'],
+    'edward':['ruby','go'],
+    'phil':['python','haskell']
+}
+for name, languages in favorite_languages.items():
+    if len(languages) < 2 :
+        print(f"\n{name.title()}'s favorite language is:")
+        for language in languages:
+            print(f"\t{language.title()}")
+    else:
+        print(f"\n{name.title()}'s favorite languages are:")
+        for language in languages:
+            print(f"\t{language.title()}")
+
+# A Dictionary in a Dictionary
+
+users = {
+    'aeinstein':{
+        'first':'albert',
+        'last':'einstein',
+        'location':'princeton'
+    },
+    'mcurie':{
+        'first':'maire',
+        'last':'curie',
+        'location':'pairs'
+    }
+}
+
+for username,user_info in users.items():
+    print(f"\nUsername: {username}")
+    full_name = f"{user_info['first']} {user_info['last']}"
+    location = user_info['location']
+
+    print(f"\tFull name: {full_name.title()}")
+    print(f"\tLocation: {location.title()}")
