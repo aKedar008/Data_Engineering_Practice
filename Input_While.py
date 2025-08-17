@@ -113,3 +113,40 @@ while polling_activity:
 print("\n-----Poll Results-----")
 for name, response in responses.items():
     print(f"{name} would like to visit {response}.")
+
+
+
+
+sandwich_orders = ['cheese sandwich','pastrami','grilled sandwitch','cheese grilled sandwitch','pastrami','vegetable sandwitch','pastrami']
+finished_Sandwich = []
+
+while sandwich_orders:
+    completed_order = sandwich_orders.pop()
+    print(f"{completed_order} To be Prepared")
+
+    finished_Sandwich.append(completed_order)
+
+for i in finished_Sandwich:
+    print(f"{i} is prepared, please collect it, Thank You")
+
+
+
+sandwich_orders = ['cheese sandwich','pastrami','grilled sandwitch','cheese grilled sandwitch','pastrami','vegetable sandwitch','pastrami']
+
+
+finished_Sandwich = []
+
+print("The deli has run out of pastrami.")
+
+# Remove all occurrences of 'pastrami'
+while 'pastrami' in sandwich_orders:
+    sandwich_orders.remove('pastrami')
+
+while sandwich_orders:
+    completed_order = sandwich_orders.pop()
+    print(f"{completed_order} To be Prepared")
+
+    finished_Sandwich.append(completed_order)
+
+for i in finished_Sandwich:
+    print(f"{i} is prepared, please collect it, Thank You")
