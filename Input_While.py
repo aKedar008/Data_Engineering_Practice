@@ -55,3 +55,61 @@ while current_number < 10:
     if current_number % 2 == 0:
         continue
     print(current_number)
+
+# Write a loop that prompts the user to enter a series of
+# pizza toppings until they enter a 'quit' value. As they enter each topping,
+# print a message saying you’ll add that topping to their pizza.
+
+prompt = "Enter the Toppings, after you are done please Enter Quit"
+
+while True:
+    pizza = input(prompt)
+
+    if pizza == 'quit':
+        break
+    else:
+        print(f"adding {pizza} to your pizza")
+
+
+# A for loop is effective for looping through a list, but you shouldn’t modify
+# a list inside a for loop because Python will have trouble keeping track of the
+# items in the list. To modify a list as you work through it, use a while loop.
+# Using while loops with lists and dictionaries allows you to collect, store, and
+# organize lots of input to examine and report on later.     
+
+unconfirmed_users = ['alice', 'brian', 'candace']
+confirmed_users = []
+
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+
+    print(f"Verifying user: {current_user.title()}")
+    confirmed_users.append(current_user)
+
+print("\nThe Following users have been confirmed:")
+for confirmed_user in confirmed_users :
+    print(confirmed_user.title())
+
+# Filling a dictionary with user input 
+
+responses = {}
+
+# setting a flag to indicate polling is active 
+polling_activity = True
+
+while polling_activity:
+    # taking peoples name as input 
+    name = input("\nWhat is your Name?")
+    response = input("Which city would you like to visit")
+
+    # storing the response in a dictionary 
+    responses[name] = response
+
+    # to check if any one else is going to take the poll
+    repeat = input("Would you like to let another user take the poll (Yes/No)")
+    if repeat == 'no':
+        polling_activity = False
+
+print("\n-----Poll Results-----")
+for name, response in responses.items():
+    print(f"{name} would like to visit {response}.")
