@@ -31,3 +31,13 @@ def favourite_book(name):
 
 favourite_book('Atomic habits')
 
+# As a function defination can have multiple paprameter we can pass arguement in mumber of ways 
+#  positional arguements::
+#  when you call a function python must match each argument in the function call with parameter in the function defination
+
+def describe_pet(animal_type,pet_name):
+    """Displaying the information abot the pet"""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}")
+
+describe_pet('Dog','MoMo')
